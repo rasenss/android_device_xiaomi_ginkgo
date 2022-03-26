@@ -18,3 +18,4 @@
     android:shape="rectangle">
     <solid android:color="@color/switch_bar_bg" />
 </shape>
+
