@@ -26,17 +26,25 @@ $(call inherit-product, device/xiaomi/ginkgo/device.mk)
 # Inherit some common ArrowOS stuff
 TARGET_BOOT_ANIMATION_RES := 1080
 TARGET_INCLUDE_PIXEL_CHARGER := true
-$(call inherit-product, vendor/arrow/config/common.mk)
+$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
 # b/189477034: Bypass build time check on uses_libs until vendor fixes all their apps
 PRODUCT_BROKEN_VERIFY_USES_LIBRARIES := true
 RELAX_USES_LIBRARY_CHECK := true
 
 # Device identifier
-PRODUCT_NAME := arrow_ginkgo
+PRODUCT_NAME := lineage_ginkgo
 PRODUCT_DEVICE := ginkgo
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := Redmi Note 8/8T
 PRODUCT_MANUFACTURER := Xiaomi
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
-DEVICE_MAINTAINER := Adithya (ghostrider_reborn)
+
+# Rom flags
+RICE_MAINTAINER := _.rasend
+RICE_OFFICIAL := true
+RICE_DEVICE := ginkgo
+TARGET_ENABLE_BLUR := true 
+TARGET_SUPPORTS_QUICK_TAP := true 
+TARGET_FACE_UNLOCK_SUPPORTED := true 
+TARGET_BUILD_GRAPHENEOS_CAMERA := true
